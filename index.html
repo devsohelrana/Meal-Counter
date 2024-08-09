@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soft Finding Meal Counter</title>
+
+    <!-- Font awesome icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <!-- Tailwind css -->
+    <link rel="stylesheet" href="./public/css/app.css" />
+  </head>
+  <body>
+    <h2 class="text-3xl font-bold font-hind text-center py-4">
+      Soft Finding Meal Counter
+    </h2>
+    <div class="w-full h-px bg-secondary mb-6"></div>
+
+    <main>
+      <section id="input" class="mb-6">
+        <div class="container mx-auto px-4">
+          <form action="">
+            <div class="grid grid-cols-3 gap-x-8 gap-y-4">
+              <div class="col-span-3 lg:col-span-1 space-y-1">
+                <label
+                  for="totalCosts"
+                  class="text-primary font-semibold text-lg"
+                  >মোট খরচ</label
+                >
+                <input
+                  type="number"
+                  id="totalCosts"
+                  class="w-full border-2 border-secondary outline-none p-2 rounded focus:border-focus transition-colors duration-500"
+                  placeholder="মোট খরচ"
+                  autofocus
+                />
+              </div>
+
+              <div class="col-span-3 lg:col-span-1 space-y-1">
+                <label
+                  for="totalMeal"
+                  class="text-primary font-semibold text-lg"
+                  >মোট মিল</label
+                >
+                <input
+                  type="number"
+                  id="totalMeal"
+                  class="w-full border-2 border-secondary outline-none p-2 rounded focus:border-focus transition-colors duration-500"
+                  placeholder="মোট মিল"
+                />
+              </div>
+
+              <div class="col-span-3 lg:col-span-1 space-y-1">
+                <label for="auntBill" class="text-primary font-semibold text-lg"
+                  >খালা বিল</label
+                >
+                <input
+                  type="number"
+                  id="auntBill"
+                  class="w-full border-2 border-secondary outline-none p-2 rounded focus:border-focus transition-colors duration-500"
+                  placeholder="খালা বিল"
+                />
+              </div>
+
+              <div class="col-span-3 lg:col-span-1 space-y-1">
+                <label
+                  for="internetBill"
+                  class="text-primary font-semibold text-lg"
+                  >ইন্টারনেট বিল</label
+                >
+                <input
+                  type="number"
+                  id="internetBill"
+                  class="w-full border-2 border-secondary outline-none p-2 rounded focus:border-focus transition-colors duration-500"
+                  placeholder="ইন্টারনেট বিল"
+                />
+              </div>
+
+              <div class="col-span-3 lg:col-span-1 space-y-1">
+                <label
+                  for="specialMeal"
+                  class="text-primary font-semibold text-lg"
+                  >Special Meal</label
+                >
+                <input
+                  type="number"
+                  id="specialMeal"
+                  class="w-full border-2 border-secondary outline-none p-2 rounded focus:border-focus transition-colors duration-500"
+                  placeholder="Special Meal"
+                />
+              </div>
+            </div>
+
+            <div class="flex justify-center items-center">
+              <button
+                type="submit"
+                class="outline-none my-6 border-2 border-secondary text-primary px-8 py-1 rounded focus:border-focus text-lg font-semibold block"
+              >
+                Save
+              </button>
+            </div>
+          </form>
+
+          <div class="w-full h-px bg-secondary"></div>
+
+          <form action="">
+            <h2 class="text-xl font-semibold font-hind text-left py-4">
+              Member input
+            </h2>
+            <div class="grid grid-cols-12 gap-x-8 gap-y-4">
+              <div class="col-span-12 lg:col-span-5 space-y-1">
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full border-2 border-secondary outline-none p-2 rounded focus:border-focus transition-colors duration-500"
+                  placeholder="নাম"
+                />
+              </div>
+
+              <div class="col-span-12 lg:col-span-3 space-y-1">
+                <input
+                  type="number"
+                  id="individualMeal"
+                  class="w-full border-2 border-secondary outline-none p-2 rounded focus:border-focus transition-colors duration-500"
+                  placeholder="মিল"
+                />
+              </div>
+
+              <div class="col-span-12 lg:col-span-3 space-y-1">
+                <input
+                  type="number"
+                  id="totalDiposit"
+                  class="w-full border-2 border-secondary outline-none p-2 rounded focus:border-focus transition-colors duration-500"
+                  placeholder="মিলে জমা"
+                />
+              </div>
+              <div
+                class="col-span-12 lg:col-span-1 space-y-1 flex justify-center items-center"
+              >
+                <button type="submit" class="w-8 h-8 bg-secondary rounded-full">
+                  <i class="fa-solid fa-check"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="output">
+        <div class="container mx-auto px-4">
+          <table
+            class="table-auto w-full border-collapse border border-secondary my-6"
+          >
+            <caption class="caption-top py-2">
+              জুলাই মাসের মিলের হিসাব
+            </caption>
+            <thead>
+              <tr>
+                <th class="border border-secondary">নাম</th>
+                <th class="border border-secondary">মিল</th>
+                <th class="border border-secondary">মিল রেট</th>
+                <th class="border border-secondary">মিলের খরচ</th>
+                <th class="border border-secondary">খালা + ফ্রিজ বিল</th>
+                <th class="border border-secondary">ইন্টারনেট বিল</th>
+                <th class="border border-secondary">মিলে জমা</th>
+                <th class="border border-secondary">ম্যানেজার পাবে / দিবে</th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              <tr>
+                <td class="border border-secondary">সুমন</td>
+                <td class="border border-secondary">65</td>
+                <td class="border border-secondary">45.15</td>
+                <td class="border border-secondary">3002</td>
+                <td class="border border-secondary">530</td>
+                <td class="border border-secondary">120</td>
+                <td class="border border-secondary">3000</td>
+                <td class="border border-secondary">532</td>
+              </tr>
+              <tr>
+                <td class="border border-secondary">সুজন</td>
+                <td class="border border-secondary">65</td>
+                <td class="border border-secondary">45.15</td>
+                <td class="border border-secondary">3002</td>
+                <td class="border border-secondary">530</td>
+                <td class="border border-secondary">120</td>
+                <td class="border border-secondary">3000</td>
+                <td class="border border-secondary">532</td>
+              </tr>
+              <tr>
+                <td class="border border-secondary">শাফিউর</td>
+                <td class="border border-secondary">65</td>
+                <td class="border border-secondary">45.15</td>
+                <td class="border border-secondary">3002</td>
+                <td class="border border-secondary">530</td>
+                <td class="border border-secondary">120</td>
+                <td class="border border-secondary">3000</td>
+                <td class="border border-secondary">532</td>
+              </tr>
+              <tr>
+                <td class="border border-secondary">রানা ভাই</td>
+                <td class="border border-secondary">65</td>
+                <td class="border border-secondary">45.15</td>
+                <td class="border border-secondary">3002</td>
+                <td class="border border-secondary">530</td>
+                <td class="border border-secondary">120</td>
+                <td class="border border-secondary">3000</td>
+                <td class="border border-secondary">532</td>
+              </tr>
+              <tr>
+                <td class="border border-secondary">আরিফুল ভাই</td>
+                <td class="border border-secondary">65</td>
+                <td class="border border-secondary">45.15</td>
+                <td class="border border-secondary">3002</td>
+                <td class="border border-secondary">530</td>
+                <td class="border border-secondary">120</td>
+                <td class="border border-secondary">3000</td>
+                <td class="border border-secondary">532</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
